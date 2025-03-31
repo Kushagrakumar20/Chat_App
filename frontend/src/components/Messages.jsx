@@ -3,9 +3,12 @@ import SingleMessage from './SingleMessage'
 import useGetMessages from '../hooks/useGetMessages'
 import { useSelector } from 'react-redux';
 import store from '../redux/store';
+import useGetRealTimeMessage from '../hooks/useGetRealTimeMessage';
+
 
 const Messages = () => {
   useGetMessages();
+    useGetRealTimeMessage();
   const { messages } = useSelector(store => store.message);
   if (!messages) return;
   return (
